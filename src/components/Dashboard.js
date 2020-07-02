@@ -13,29 +13,45 @@ export default function Dashboard() {
     return new Intl.NumberFormat().format(number)
   }
 
-  return (
-    <>
-      <HeaderContent
-        location={dailyData.country}
-        lastupdate={date.toLocaleString()}
-      />
-      <div className="dashboard">
-        <div className="case">
-          <img src={Virus} alt="total cases icon" />
-          <h3>Cases</h3>
-          <p>{formater(dailyData.cases)}</p>
+  if (dailyData.isLoading) {
+    return (
+      <p
+        style={{
+          textAlign: 'center',
+          fontFamily: 'Poppins',
+          fontWeight: 'bold',
+          marginTop: '10rem',
+          fontSize: '30px',
+        }}
+      >
+        Loading...
+      </p>
+    )
+  } else {
+    return (
+      <>
+        <HeaderContent
+          location={dailyData.country}
+          lastupdate={date.toLocaleString()}
+        />
+        <div className="dashboard">
+          <div className="case">
+            <img src={Virus} alt="total cases icon" />
+            <h3>Cases</h3>
+            <p>{formater(dailyData.cases)}</p>
+          </div>
+          <div className="recorved">
+            <img src={Recorved} alt="total cases icon" />
+            <h3>Recorved</h3>
+            <p>{formater(dailyData.recorved)}</p>
+          </div>
+          <div className="deaths">
+            <img src={Death} alt="total cases icon" />
+            <h3>Deaths</h3>
+            <p>{formater(dailyData.deaths)}</p>
+          </div>
         </div>
-        <div className="recorved">
-          <img src={Recorved} alt="total cases icon" />
-          <h3>Recorved</h3>
-          <p>{formater(dailyData.recorved)}</p>
-        </div>
-        <div className="deaths">
-          <img src={Death} alt="total cases icon" />
-          <h3>Deaths</h3>
-          <p>{formater(dailyData.deaths)}</p>
-        </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  }
 }

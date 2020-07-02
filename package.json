@@ -1,6 +1,7 @@
 {
   "name": "covid19tracker",
   "version": "0.1.0",
+  "homepage": "https://makuzaverite.github.io/covid19tracker",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -13,6 +14,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "deploy": "npm run build&&gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

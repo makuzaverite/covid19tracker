@@ -10,6 +10,7 @@ const DataContextProvider = (props) => {
     deaths: undefined,
     recorved: undefined,
     lastupdate: undefined,
+    isLoading: true,
   })
 
   useEffect(() => {
@@ -22,6 +23,7 @@ const DataContextProvider = (props) => {
         deaths: data.data.deaths.value,
         recorved: data.data.recovered.value,
         lastupdate: data.data.lastUpdate,
+        isLoading: false,
       })
     }
 
