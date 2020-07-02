@@ -4,7 +4,7 @@ import axios from 'axios'
 export default function useDataSearch(query) {
   const [country, setCountry] = useState('')
   const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState('')
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     setCountry('')
@@ -26,7 +26,7 @@ export default function useDataSearch(query) {
       })
       .catch((e) => {
         if (axios.isCancel(e)) return
-        setError(e)
+        if (e.response.status === 404) setError(true)
       })
 
     return () => cancel()

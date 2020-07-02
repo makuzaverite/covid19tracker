@@ -9,7 +9,6 @@ const SearchForm = (props) => {
 
   function handleSearch(e) {
     setQuery(e.target.value)
-
     if (country) {
       setData({
         country: query,
@@ -25,7 +24,6 @@ const SearchForm = (props) => {
   return (
     <>
       <form className="searchBox" onSubmit={handleSearch}>
-        {/* <i className="fa fa-search fa-3x"></i> */}
         <input
           type="text"
           placeholder="Search for a specific country..."

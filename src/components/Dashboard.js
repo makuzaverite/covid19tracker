@@ -13,7 +13,21 @@ export default function Dashboard() {
     return new Intl.NumberFormat().format(number)
   }
 
-  if (dailyData.isLoading) {
+  if (dailyData.error) {
+    return (
+      <p
+        style={{
+          textAlign: 'center',
+          fontFamily: 'Poppins',
+          fontWeight: 'bold',
+          marginTop: '10rem',
+          fontSize: '30px',
+        }}
+      >
+        Country not found
+      </p>
+    )
+  } else if (dailyData.isLoading) {
     return (
       <p
         style={{

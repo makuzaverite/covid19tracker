@@ -11,6 +11,7 @@ const DataContextProvider = (props) => {
     recorved: undefined,
     lastupdate: undefined,
     isLoading: true,
+    error: true,
   })
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const DataContextProvider = (props) => {
         recorved: data.data.recovered.value,
         lastupdate: data.data.lastUpdate,
         isLoading: false,
+        error: false,
       })
     }
 
