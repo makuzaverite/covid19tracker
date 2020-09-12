@@ -5,9 +5,9 @@ import Header from './components/Header'
 import SearchForm from './components/SearchForm'
 import { useState } from 'react'
 import Dashboard from './components/Dashboard'
-// import DataContextProvider from './context/DataContext'
-// import Notes from './components/Notes'
-// import { MapDasboard } from './components/MapDasboard'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Notes from './components/Notes'
+import { MapDasboard } from './components/MapDasboard'
 
 function App() {
 	const [param, setParam] = useState('')
@@ -27,11 +27,20 @@ function App() {
 	}
 
 	return (
-		<>
+		<Router>
 			<Header />
-			<SearchForm param={param} onParamChange={onParamChange} />
-			<Dashboard data={state} location={param} />
-		</>
+
+			<Switch>
+				<Route path='/' exact>
+					<SearchForm param={param} onParamChange={onParamChange} />
+					<Dashboard data={state} location={param} />
+					<Notes />
+				</Route>
+				<Route exact path='/map'>
+					<MapDasboard />
+				</Route>
+			</Switch>
+		</Router>
 	)
 }
 
