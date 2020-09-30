@@ -1,15 +1,45 @@
 import React from 'react'
-import { Map, TileLayer } from 'react-leaflet'
-// import { CircleMarker, Tooltip } from 'leaflet'
+import { Map, TileLayer, Tooltip, Marker } from 'react-leaflet'
+import { useFetchCountryData } from '../Hooks'
 import './Map.css'
+import ToolTipData from './ToolTipData'
 
 export function MapDasboard() {
-	return (
-		<Map center={[-1.935114, 30.082111]} zoom={12}>
-			<TileLayer
-				url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-				attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-			/>
-		</Map>
-	)
+  const countryData = useFetchCountryData()
+
+  return (
+    countryData && (
+      <Map center={[0, 0]} zoom={3}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        />
+
+        {countryData.map((country) => (
+          <Marker
+            key={country.country_code}
+            position={[country.latitude, country.longitude]}
+          >
+            <Tooltip
+              fillColor="red"
+              offset={[0, 20]}
+              opacity={1}
+              direction="right"
+              style={{
+                backgroundColor: '#00293d',
+              }}
+            >
+              <ToolTipData
+                location={country.location}
+                dead={country.dead}
+                recovered={country.recovered}
+                confirmed={country.confirmed}
+                updated={country.updated}
+              />
+            </Tooltip>
+          </Marker>
+        ))}
+      </Map>
+    )
+  )
 }

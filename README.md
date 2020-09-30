@@ -4,7 +4,9 @@
 
 ### Preview image here(desktop version)
 
-![Prev image](./prev.PNG)
+![Prev image](./screenshots/1.png)
+![Prev image](./screenshots/2.png)
+![Prev image](./screenshots/3.png)
 
 #### How to use it on your computer
 
