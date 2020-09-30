@@ -5,8 +5,8 @@
 ### Preview image here(desktop version)
 
 ![Preview 1](./screenshots/1.png)
-![Preview 2](./screenshots/2.png)
-![Preview 3](./screenshots/3.png)
+![Preview 2](./screenshots/2.PNG)
+![Preview 3](./screenshots/3.PNG)
 
 #### How to use it on your computer
 
