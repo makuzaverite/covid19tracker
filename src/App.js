@@ -15,7 +15,7 @@ function App() {
 
   const onParamChange = (e) => {
     const query = e.target.value
-    setParam(query.toLowerCase())
+    setParam(query)
 
     if (query.length <= 0) {
       setReqType('all')

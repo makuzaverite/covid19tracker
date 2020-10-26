@@ -61,7 +61,7 @@ export default function useFetchData(params, type) {
       if (params.length <= 0) {
         searchForAll()
       } else {
-        searchForCountry(params)
+        searchForCountry(params.toLowerCase())
       }
     } else {
       searchForAll()
