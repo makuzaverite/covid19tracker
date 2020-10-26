@@ -2,46 +2,41 @@ import React from 'react'
 import { useFectchData } from './Hooks'
 import './style.css'
 import Header from './components/Header'
-import SearchForm from './components/SearchForm'
 import { useState } from 'react'
-import Dashboard from './components/Dashboard'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Notes from './components/Notes'
+import { Switch, Route } from 'react-router-dom'
 import { MapDasboard } from './components/MapDasboard'
+import Home from './Home'
 
 function App() {
-	const [param, setParam] = useState('')
-	const [reqType, setReqType] = useState('all')
+  const [param, setParam] = useState('')
+  const [reqType, setReqType] = useState('all')
 
-	const state = useFectchData(param, reqType)
+  const state = useFectchData(param, reqType)
 
-	const onParamChange = (e) => {
-		const query = e.target.value
-		setParam(query)
+  const onParamChange = (e) => {
+    const query = e.target.value
+    setParam(query.toLowerCase())
 
-		if (query.length <= 0) {
-			setReqType('all')
-		} else {
-			setReqType('country')
-		}
-	}
+    if (query.length <= 0) {
+      setReqType('all')
+    } else {
+      setReqType('country')
+    }
+  }
 
-	return (
-		<Router>
-			<Header />
-
-			<Switch>
-				<Route path='/' exact>
-					<SearchForm param={param} onParamChange={onParamChange} />
-					<Dashboard data={state} location={param} />
-					<Notes />
-				</Route>
-				<Route exact path='/map'>
-					<MapDasboard />
-				</Route>
-			</Switch>
-		</Router>
-	)
+  return (
+    <>
+      <Header />
+      <Switch>
+        <Route path="/" exact>
+          <Home state={state} onParamChange={onParamChange} param={param} />
+        </Route>
+        <Route path="/map" exact>
+          <MapDasboard />
+        </Route>
+      </Switch>
+    </>
+  )
 }
 
 export default App
