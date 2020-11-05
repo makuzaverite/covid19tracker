@@ -38,7 +38,7 @@ body {
   align-items: center;
   min-height: 10rem;
   width: 100%;
-  max-width: 90%;
+  max-width: 100%;
   position: relative;
   top: 30px;
 }
@@ -119,6 +119,7 @@ body {
   }
   .searchBox {
     left: 20px;
+    width: 90%;
   }
   .searchBox input {
     height: 40px;
