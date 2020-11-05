@@ -8,6 +8,12 @@
 ![Preview 2](./screenshots/2.PNG)
 ![Preview 3](./screenshots/3.PNG)
 
+
+### Tech stack
+
+- Reactjs
+- css
+
 #### How to use it on your computer
 
 ```git
