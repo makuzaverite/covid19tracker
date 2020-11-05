@@ -1,4 +1,4 @@
-# Covid 19 Tracker Application
+### Covid 19 Tracker Application With React.js
 
 > Used to search for global pandemic statistics yo may also search for a perticular country and view easly how to the stuation is in particular location
 
@@ -9,10 +9,6 @@
 ![Preview 3](./screenshots/3.PNG)
 
 
-### Tech stack
-
-- Reactjs
-- css
 
 #### How to use it on your computer
 
