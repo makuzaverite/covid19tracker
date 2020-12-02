@@ -51,7 +51,7 @@ export default function Dashboard({ data, location }) {
           </div>
           <div className="recorved">
             <img src={Recorved} alt="total cases icon" />
-            <h3>Recorved</h3>
+            <h3>Recovered</h3>
             <p>{formater(data.data.recovered.value)}</p>
           </div>
           <div className="deaths">
