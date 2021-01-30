@@ -4,7 +4,7 @@
   "homepage": "https://makuzaverite.github.io/covid19tracker",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.21.1",
