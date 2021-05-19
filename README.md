@@ -34,4 +34,4 @@
 
 ##### Feel free to use this code in whaterver you want
 
-###### If you wish you want to add some thing make a pull request add do it
+###### If you wish you want to add some thing then make a pull request and do it
