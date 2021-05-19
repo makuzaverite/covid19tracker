@@ -1,5 +1,6 @@
+import 'leaflet/dist/leaflet.css'
 import React from 'react'
-import { Map, TileLayer, Tooltip, Marker } from 'react-leaflet'
+import { MapContainer, Marker, TileLayer, Tooltip } from 'react-leaflet'
 import { useFetchCountryData } from '../Hooks'
 import './Map.css'
 import ToolTipData from './ToolTipData'
@@ -9,7 +10,7 @@ export function MapDasboard() {
 
   return (
     countryData && (
-      <Map center={[0, 0]} zoom={3}>
+      <MapContainer center={[0, 0]} zoom={3}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -39,7 +40,7 @@ export function MapDasboard() {
             </Tooltip>
           </Marker>
         ))}
-      </Map>
+      </MapContainer>
     )
   )
 }
