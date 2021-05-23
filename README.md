@@ -2,7 +2,13 @@
 
 > Used to search for global pandemic statistics yo may also search for a perticular country and view easly how to the stuation is in particular location
 
-### Preview image here(desktop version)
+
+### Tech stack
+
+- React.js 
+- Vite.js
+
+### Preview image here
 
 ![Preview 1](./screenshots/1.png)
 ![Preview 2](./screenshots/2.PNG)
