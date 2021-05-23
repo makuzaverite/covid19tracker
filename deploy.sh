@@ -21,5 +21,4 @@ git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:makuzaverite/covid19tracker.git master:gh-pages
-
 cd -
